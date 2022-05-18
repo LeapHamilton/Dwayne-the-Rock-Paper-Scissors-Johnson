@@ -15,8 +15,7 @@ return hands[a];
 //function to play a round
 function playRound(){
     let computerChoice = computerPlay();
-    let playerChoice=prompt("Type Rock, Paper or Scissors and click ok!");
-    playerChoice=playerChoice.toLowerCase().trim();
+    let playerChoice=prompt("Type Rock, Paper or Scissors and click ok!").toLowerCase().trim();
 
 //comparison of player vs computer choice
 if (playerChoice==="rock" && computerChoice==="rock") {

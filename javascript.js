@@ -31,12 +31,32 @@ if (playerChoice==="rock" && computerChoice==="paper") {
     alert ("Computer chose Paper - you lose.")
     computerScore+=1;
 }
-if (playerChoice==="paper" && computerChoice==="paper") {alert ("Computer chose Paper - it's a draw.")}
-if (playerChoice==="paper" && computerChoice==="rock") {alert ("Computer chose Rock - you win!")}
-if (playerChoice==="paper" && computerChoice==="scissors") {alert ("Computer chose Scissors - you lose.")}
-if (playerChoice==="scissors" && computerChoice==="scissors") {alert ("Computer chose Scissors - it's a draw.")}
-if (playerChoice==="scissors" && computerChoice==="paper") {alert ("Computer chose paper - you win!")}
-if (playerChoice==="scissors" && computerChoice==="rock") {alert ("Computer chose Rock - you lose.")}
+if (playerChoice==="paper" && computerChoice==="paper") {
+    alert ("Computer chose Paper - it's a draw.")
+yourScore+=0.5;
+computerScore+=0.5;
+}
+if (playerChoice==="paper" && computerChoice==="rock") {
+    alert ("Computer chose Rock - you win!")
+yourScore+=1;
+}
+if (playerChoice==="paper" && computerChoice==="scissors") {
+    alert ("Computer chose Scissors - you lose.")
+computerScore+=1
+}
+if (playerChoice==="scissors" && computerChoice==="scissors") {
+    alert ("Computer chose Scissors - it's a draw.")
+yourScore+=0.5;
+computerScore+=0.5;
+}
+if (playerChoice==="scissors" && computerChoice==="paper") {
+    alert ("Computer chose paper - you win!")
+yourScore+=1;
+}
+if (playerChoice==="scissors" && computerChoice==="rock") {
+    alert ("Computer chose Rock - you lose.")
+computerScore+=1
+}
 
 return}
 

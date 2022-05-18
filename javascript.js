@@ -55,7 +55,7 @@ function game() {
     }
     if (i===4 && yourScore===computerScore) {alert(`It's a ${yourScore}-${computerScore} tie!`)}
     }
-    
+    location.reload();
     return}
 
     

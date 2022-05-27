@@ -1,0 +1,30 @@
+html, body {
+    min-height: 100vh;
+    display: flex;
+    margin:auto;
+}
+
+
+h1 {
+    text-align:center
+}
+
+img {
+    max-width: 45%;
+}
+
+button {
+    border-radius: 10%;
+    background-color: black;
+    border: none;
+    box-shadow: grey;
+}
+button:hover {
+    background-color: #303030;
+   
+}
+
+
+
+
+

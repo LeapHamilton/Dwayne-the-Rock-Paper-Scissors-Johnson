@@ -3,21 +3,30 @@ let yourScore=0
 let computerScore=0
 //function to make computer choose a hand
 const hands = ["rock", "paper", "scissors"];
+
+
+
 function computerPlay() {
 let a = Math.floor(Math.random()*3);
 return hands[a];
 }
 
+function getChoice(){
+let buttons = document.querySelectorAll('button')
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        return playRound(button.id, computerPlay());
+    });
+});       
+}
+let playerChoice = getChoice();
+
+let computerChoice = computerPlay();
 
 
+function playRound(playerChoice, computerChoice){
+    
 
-
-//function to play a round
-function playRound(){
-    let computerChoice = computerPlay();
-    let playerChoice=prompt("Type Rock, Paper or Scissors and click ok!").toLowerCase().trim();
-
-//comparison of player vs computer choice
 if (playerChoice==="rock" && computerChoice==="rock") {
     alert ("Computer chose Rock - it's a draw");
     yourScore+=0.5;
@@ -58,12 +67,34 @@ if (playerChoice==="scissors" && computerChoice==="rock") {
 computerScore+=1
 }
 
-return}
+
+console.log (yourScore, computerScore)
+
+
+
+return;}
+
+
+
 
 
 //the loop that contains the game
-function game() {
-    for (let i=0; i<5;i++) {
+/*function game() {
+
+
+    playRound(playerChoice, computerChoice);
+    
+    return;}
+
+    
+//call the frikkin function, Richard! 
+game();
+*/
+
+
+
+
+/* for (let i=0; i<5;i++) {
     playRound();
 
     if (i===4 && yourScore>computerScore) {
@@ -74,9 +105,4 @@ function game() {
     }
     if (i===4 && yourScore===computerScore) {alert(`It's a ${yourScore}-${computerScore} tie!`)}
     }
-    location.reload();
-    return}
-
-    
-//call the frikkin function, Richard! 
-game();
+    */

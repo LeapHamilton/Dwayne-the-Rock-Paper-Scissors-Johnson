@@ -11,18 +11,24 @@ h1 {
 
 img {
     max-width: 45%;
+    opacity: 1;
+}
+img:hover {
+    opacity: 0.5;
 }
 
+
 button {
-    border-radius: 10%;
-    background-color: black;
+    background-color: white;
     border: none;
-    box-shadow: grey;
 }
-button:hover {
-    background-color: #303030;
+
+button:hoer {
+    border-radius: 30%;
+    background-color: grey;
    
 }
+
 
 
 

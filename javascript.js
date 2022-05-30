@@ -1,9 +1,7 @@
 
 let yourScore=0
 let computerScore=0
-//function to make computer choose a hand
 const hands = ["rock", "paper", "scissors"];
-
 
 
 function computerPlay() {
@@ -12,6 +10,7 @@ return hands[a];
 }
 
 function getChoice(){
+    checkWin();
 let buttons = document.querySelectorAll('button')
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -19,90 +18,85 @@ buttons.forEach((button) => {
     });
 });       
 }
+
 let playerChoice = getChoice();
 
 let computerChoice = computerPlay();
 
 
+function checkWin(){
+if (yourScore >= 5) {
+    alert ("You win! You ROCK!");
+
+location.reload()};
+
+if (computerScore >= 5){
+    alert ("Dwayne won. It looks like you've hit ROCK bottom.");
+    location.reload()};
+
+return;
+}
+
+
+function printScores(){
+    document.getElementById("player").textContent = `You: ${yourScore}`;
+    document.getElementById("computer").textContent = `Dwayne: ${computerScore}`;
+    return;
+}
+
 function playRound(playerChoice, computerChoice){
     
 
+
 if (playerChoice==="rock" && computerChoice==="rock") {
-    alert ("Computer chose Rock - it's a draw");
+    alert ("Dwayne chose Rock - it's a draw");
     yourScore+=0.5;
     computerScore+=0.5;
+    printScores();
 }
 if (playerChoice==="rock" && computerChoice==="scissors") {
-    alert ("Computer chose Scissors - you win!")
+    alert ("Dwayne chose Scissors - you win!")
     yourScore+=1;
+    printScores();
 }
 if (playerChoice==="rock" && computerChoice==="paper") {
-    alert ("Computer chose Paper - you lose.")
+    alert ("Dwayne chose Paper - you lose.")
     computerScore+=1;
+    printScores();
 }
 if (playerChoice==="paper" && computerChoice==="paper") {
-    alert ("Computer chose Paper - it's a draw.")
+    alert ("Dwayne chose Paper - it's a draw.")
 yourScore+=0.5;
 computerScore+=0.5;
+printScores();
 }
 if (playerChoice==="paper" && computerChoice==="rock") {
-    alert ("Computer chose Rock - you win!")
+    alert ("Dwayne chose Rock - you win!")
 yourScore+=1;
+printScores();
 }
 if (playerChoice==="paper" && computerChoice==="scissors") {
-    alert ("Computer chose Scissors - you lose.")
-computerScore+=1
+    alert ("Dwayne chose Scissors - you lose.")
+computerScore+=1;
+printScores();
 }
 if (playerChoice==="scissors" && computerChoice==="scissors") {
-    alert ("Computer chose Scissors - it's a draw.")
+    alert ("Dwayne chose Scissors - it's a draw.")
 yourScore+=0.5;
 computerScore+=0.5;
+printScores();
 }
 if (playerChoice==="scissors" && computerChoice==="paper") {
-    alert ("Computer chose paper - you win!")
+    alert ("Dwayne chose paper - you win!")
 yourScore+=1;
+printScores();
 }
 if (playerChoice==="scissors" && computerChoice==="rock") {
-    alert ("Computer chose Rock - you lose.")
+    alert ("Dwayne chose Rock - you lose.")
 computerScore+=1
+printScores();
 }
 
 
-console.log (yourScore, computerScore)
-
-
-
+checkWin();
 return;}
-
-
-
-
-
-//the loop that contains the game
-/*function game() {
-
-
-    playRound(playerChoice, computerChoice);
-    
-    return;}
-
-    
-//call the frikkin function, Richard! 
-game();
-*/
-
-
-
-
-/* for (let i=0; i<5;i++) {
-    playRound();
-
-    if (i===4 && yourScore>computerScore) {
-        alert(`Congratulations! You win ${yourScore} to ${computerScore}`)
-    } 
-    if (i===4 && yourScore<computerScore) {
-        alert (`Sorry. You lose ${yourScore} to ${computerScore}`)
-    }
-    if (i===4 && yourScore===computerScore) {alert(`It's a ${yourScore}-${computerScore} tie!`)}
-    }
-    */
